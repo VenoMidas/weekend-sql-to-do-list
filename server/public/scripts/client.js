@@ -1,7 +1,7 @@
-console.log('Hello World');
+// console.log('Hello World');
 
 $(document).ready(readyNow);
 
 function readyNow() {
-    console.log('Hello jQuery');
+    // console.log('Hello jQuery');
 };

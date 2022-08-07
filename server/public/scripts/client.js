@@ -43,7 +43,7 @@ function getTasks() {
         type: 'GET',
         url: '/tasks'
     }).then(function (response) {
-        console.log(response);
+        // console.log(response);
         $('#to-do-list').empty();
         for(let task of response) {
             $('#to-do-list').append(`

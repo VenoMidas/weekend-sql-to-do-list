@@ -23,15 +23,15 @@
     <div class="container-lg bg-light">
 
         <!-- Input Title-->
-        <div class="text-center">
+        <div class="text-center pt-4">
             <h2>What do you need to do?</h2>
         </div> <!-- End Title-->
 
         <!-- Input Fields -->
-        <div class="row justify-content-center mt-3">
+        <div class="row justify-content-center">
 
             <div class="col-lg-6">
-                <form action="">
+                <form>
                     <label for="task" class="form-label">Task:</label>
                     <div class="input-group">
                         <span class="input-group-text">
@@ -45,7 +45,7 @@
                             <i class="bi bi-ticket-detailed"></i>
                         </span>
                         <div class="form-floating">
-                            <textarea name="" id="details" class="form-control"></textarea>
+                            <textarea id="details" class="form-control"></textarea>
                             <label for="details">Additional Details (optional):</label>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
         <div class="row justify-content-center my-3">
             <div class="col-lg-8">
                 <div class="list-group pb-5">
-                    <div class="list-group-item py-3">
+                    <div id="to-do-list" class="list-group-item py-3">
                         <span class="h5">
                             <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -90,6 +90,14 @@
                         <p class="my-2 ps-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur error
                             veniam sit expedita est illo maiores neque quos nesciunt, reprehenderit autem odio
                             commodi labore praesentium voluptate repellat in id quisquam.</p>
+                        <ul class="list-inline m-0 text-end">
+                            <li class="list-inline-item">
+                                <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"><i class="bi bi-pencil-square"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <button class="btn btn-danger btn-sm rounded-0" type="button" title="delete"><i class="bi bi-trash3"></i>
+                            </li>
+                        </ul>
                     </div>
                     <div class="list-group-item py-3">
                         <span class="h5">
@@ -99,6 +107,14 @@
                         <p class="my-2 ps-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur error
                             veniam sit expedita est illo maiores neque quos nesciunt, reprehenderit autem odio
                             commodi labore praesentium voluptate repellat in id quisquam.</p>
+                        <ul class="list-inline m-0 text-end">
+                            <li class="list-inline-item">
+                                <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"><i class="bi bi-pencil-square"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <button class="btn btn-danger btn-sm rounded-0" type="button" title="delete"><i class="bi bi-trash3"></i>
+                            </li>
+                        </ul>
                     </div>
                     <div class="list-group-item py-3">
                         <span class="h5">
@@ -108,6 +124,14 @@
                         <p class="my-2 ps-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur error
                             veniam sit expedita est illo maiores neque quos nesciunt, reprehenderit autem odio
                             commodi labore praesentium voluptate repellat in id quisquam.</p>
+                        <ul class="list-inline m-0 text-end">
+                            <li class="list-inline-item">
+                                <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"><i class="bi bi-pencil-square"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <button class="btn btn-danger btn-sm rounded-0" type="button" title="delete"><i class="bi bi-trash3"></i>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

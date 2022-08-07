@@ -1,0 +1,14 @@
+.low {
+    border-left-color: #198754;
+    border-left-width: 5px;
+}
+
+.medium {
+    border-left-color: #ffc107;
+    border-left-width: 5px;
+}
+
+.high {
+    border-left-color: #dc3545;
+    border-left-width: 5px;
+}

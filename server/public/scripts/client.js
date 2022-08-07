@@ -47,7 +47,7 @@ function getTasks() {
         $('#to-do-list').empty();
         for(let task of response) {
             $('#to-do-list').append(`
-            <div class="list-group-item py-3">
+            <div class="list-group-item py-3 ${task.priority}">
             <span class="h5">
                 <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
                 ${task.task}

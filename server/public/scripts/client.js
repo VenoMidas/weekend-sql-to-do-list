@@ -46,7 +46,7 @@ function getTasks() {
     }).then(function (response) {
         // console.log(response);
         $('#to-do-list').empty();
-        for(let task of response) {
+        for (let task of response) {
             $('#to-do-list').append(`
             <div class="list-group-item py-3 ${task.priority}">
             <span class="h5">
@@ -59,7 +59,7 @@ function getTasks() {
                     <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"><i class="bi bi-pencil-square"></i>
                 </li>
                 <li class="list-inline-item">
-                    <button class="btn btn-danger btn-sm rounded-0" type="button" title="delete"><i class="bi bi-trash3"></i>
+                    <button class="btn btn-danger btn-sm rounded-0" type="button" title="delete" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="bi bi-trash3"></i>
                 </li>
             </ul>
         </div>
@@ -75,7 +75,7 @@ function checkboxClick() {
     // console.log('In checkboxClick');
     // console.log($(this));
     // console.log($(this).prop("checked"));
-    if($(this).prop("checked") === true) {
+    if ($(this).prop("checked") === true) {
         $(this).parent().parent().addClass('complete-task');
     } else {
         $(this).parent().parent().removeClass('complete-task');

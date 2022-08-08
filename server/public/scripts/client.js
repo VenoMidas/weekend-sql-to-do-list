@@ -56,7 +56,7 @@ function getTasks() {
             <p class="my-2 ps-5">${task.details}</p>
             <ul class="list-inline m-0 text-end">
                 <li class="list-inline-item">
-                    <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"><i class="bi bi-pencil-square"></i>
+                    <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit" data-bs-toggle="modal" data-bs-target="#update-modal"><i class="bi bi-pencil-square"></i>
                 </li>
                 <li class="list-inline-item">
                     <button class="btn btn-danger btn-sm rounded-0" type="button" title="delete" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="bi bi-trash3"></i>

@@ -92,7 +92,8 @@
                             commodi labore praesentium voluptate repellat in id quisquam.</p>
                         <ul class="list-inline m-0 text-end">
                             <li class="list-inline-item">
-                                <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"><i
+                                <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"
+                                    data-bs-toggle="modal" data-bs-target="#update-modal"><i
                                         class="bi bi-pencil-square"></i>
                             </li>
                             <li class="list-inline-item">
@@ -111,7 +112,8 @@
                             commodi labore praesentium voluptate repellat in id quisquam.</p>
                         <ul class="list-inline m-0 text-end">
                             <li class="list-inline-item">
-                                <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"><i
+                                <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"
+                                    data-bs-toggle="modal" data-bs-target="#update-modal"><i
                                         class="bi bi-pencil-square"></i>
                             </li>
                             <li class="list-inline-item">
@@ -130,7 +132,8 @@
                             commodi labore praesentium voluptate repellat in id quisquam.</p>
                         <ul class="list-inline m-0 text-end">
                             <li class="list-inline-item">
-                                <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"><i
+                                <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit"
+                                    data-bs-toggle="modal" data-bs-target="#update-modal"><i
                                         class="bi bi-pencil-square"></i>
                             </li>
                             <li class="list-inline-item">
@@ -156,11 +159,45 @@
                     <p>Are you sure you want to delete this task? This cannot be undone!</p>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger">Yes</button>
+                    <button class="btn btn-danger">DELETE!</button>
                 </div>
             </div>
         </div>
     </div> <!-- End of "delete" modal -->
+
+    <!-- "update" modal -->
+    <div id="update-modal" class="modal fade" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Edit task</h5>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="update-task" class="form-label">Update Task:</label>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-list-task"></i>
+                        </span>
+                        <input type="text" class="form-control" id="update-task" placeholder="e.g. mow the lawn"
+                            required>
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text">
+                            <i class="bi bi-ticket-detailed"></i>
+                        </span>
+                        <div class="form-floating">
+                            <textarea id="update-details" class="form-control"></textarea>
+                            <label for="update-details">Additional Details (optional):</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning">Update</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End of "update" modal -->
 
     <!-- Bootstrap JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

@@ -1,5 +1,5 @@
 // custom variables
-$light: red;
+// $light: red;
 
 // import functions and variables to be able to re-map themes
 // functions need to come first so variables can access it 
@@ -9,7 +9,9 @@ $light: red;
 
 // custom colors
 $custom-theme-colors: (
-    "alt-light": teal,
+    "alt-light": #94dfff,
+    "alt-warning": #ffe387,
+    "alt-danger": #fb8484,
 );
 
 // redefine theme-colors with previous theme colors and custom-theme colors

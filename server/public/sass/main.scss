@@ -1,0 +1,21 @@
+// custom variables
+// $light: red;
+
+// import functions and variables to be able to re-map themes
+// functions need to come first so variables can access it 
+@import '../../../node_modules/bootstrap/scss/functions';
+// variables needs to be inported so it can target and re-write the theme map
+@import '../../../node_modules/bootstrap/scss/variables';
+
+// custom colors
+$custom-theme-colors: (
+    "alt-light": #94dfff,
+    "alt-warning": #ffe387,
+    "alt-danger": #fb8484,
+);
+
+// redefine theme-colors with previous theme colors and custom-theme colors
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+// import bootstrap
+@import '../../../node_modules/bootstrap/scss/bootstrap';

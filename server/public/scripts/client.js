@@ -6,6 +6,7 @@ function readyNow() {
     // console.log('Hello jQuery');
     getTasks()
     submitButtonHandler();
+    $('body').on('click', '.form-check-input', checkboxClick);
 };
 
 function submitButtonHandler() {
@@ -68,4 +69,15 @@ function getTasks() {
         console.log(error);
         alert('Something went wrong!');
     });
+};
+
+function checkboxClick() {
+    // console.log('In checkboxClick');
+    // console.log($(this));
+    // console.log($(this).prop("checked"));
+    if($(this).prop("checked") === true) {
+        $(this).parent().parent().addClass('complete-task');
+    } else {
+        $(this).parent().parent().removeClass('complete-task');
+    };
 };

@@ -12,3 +12,7 @@
     border-left-color: #dc3545;
     border-left-width: 5px;
 }
+
+.complete-task {
+    background-color: rgb(94, 212, 125);
+}

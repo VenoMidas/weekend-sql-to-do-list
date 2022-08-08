@@ -45,18 +45,18 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 
 ### Required Features
 
-- [ ] Create a front end experience that allows a user to create a Task.
+- [X] Create a front end experience that allows a user to create a Task.
 - [ ] When the Task is created, it should be stored inside of a database (SQL)
-- [ ] Whenever a Task is created the front end should refresh to show all tasks that need to be completed.
-- [ ] Each Task should have an option to 'Complete' or 'Delete'.
-- [ ] When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be  'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.
+- [X] Whenever a Task is created the front end should refresh to show all tasks that need to be completed.
+- [X] Each Task should have an option to 'Complete' or 'Delete'.
+- [X] When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be  'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.
 - [ ] Whether or not a Task is complete should also be stored in the database.
 - [ ] Deleting a Task should remove it both from the front end as well as the Database.
 
 ### Styling
-- [ ] Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
-  - [ ] background color of the page
-  - [ ] font family and size
+- [X] Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
+  - [X] background color of the page
+  - [X] font family and size
   - [ ] text color & or background color of tasks *to show whether or not they have been completed*
 
 ### Database
@@ -69,18 +69,18 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 
 For each of your strech goals, you will be practicing git branching. Please refer to the branching notes for a reminder on commands. Each branch will be merged into main using `--no-ff`. This will allow us to see that you branched your feature when you turn in your code.
 
-- [ ] `feature-styling-bootstrap` 
-    - [ ]  Add Bootstrap to the front end and style it up!
-    - [ ] Buttons -- make the creation buttons and completion buttons green and the delete red.
-    - [ ] Inputs -- make your text inputs styled in the bootstrap way
-    - [ ] Responsive -- make your app responsive to different screen sizes -- check out the [Layout](https://getbootstrap.com/docs/4.1/layout/overview/) section
+- [X] `feature-styling-bootstrap` 
+    - [X] Add Bootstrap to the front end and style it up!
+    - [X] Buttons -- make the creation buttons and completion buttons green and the delete red.
+    - [X] Inputs -- make your text inputs styled in the bootstrap way
+    - [X] Responsive -- make your app responsive to different screen sizes -- check out the [Layout](https://getbootstrap.com/docs/4.1/layout/overview/) section
 
 - [ ] `feature-confirm-delete`
-    - [ ]  In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task.
+    - [ ] In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task.
     - [ ] Some styled options are [Bootstrap Modal](https://getbootstrap.com/docs/4.0/components/modal/) or [Sweet Alerts](https://sweetalert.js.org/guides/): Use the CDN option.
 
 - [ ] `feature-ordering-task-query` 
-    - [ ]  Research [Query Params](https://expressjs.com/en/api.html#req.query) to have the request reverse the order of the returned todos. 
+    - [ ] Research [Query Params](https://expressjs.com/en/api.html#req.query) to have the request reverse the order of the returned todos. 
     
 - [ ] `feature-time-completed` 
-    - [ ]  Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format.
+    - [ ] Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format.

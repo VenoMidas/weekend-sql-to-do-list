@@ -1,14 +1,20 @@
+const { query } = require('express');
 const express = require('express');
 const tasksRouter = express.Router();
 const pool = require('../modules/pool.js');
 
-const tasks = [];
-
 tasksRouter.post('/', (req, res) => {
     const task = req.body;
-    tasks.push(task);
-    // console.log(tasks);
-    res.sendStatus(201);
+    const queryText = `INSERT INTO "tasks" ("task", "details", "priority")
+                       VALUES ($1, $2, $3);`
+    pool.query(queryText, [task.task, task.details, task.priority])
+        .then((results) => {
+            // console.log(results);
+            res.send(results)
+        }).catch((error) => {
+            console.log('Error in POST /tasks', error);
+            res.sendStatus(500);
+        });
 });
 
 tasksRouter.get('/', (req, res) => {

@@ -6,16 +6,10 @@ function readyNow() {
     // console.log('Hello jQuery');
     getTasks()
     submitButtonHandler();
-    $('body').on('click', '.form-check-input', checkboxClick);
+    deleteModalButtonHandler();
 
-    $('#delete-modal').on('show.bs.modal', function (event) {
-        // Button that triggered the modal
-        let buttonId = $(event.relatedTarget);
-        // Extract info from data-* attributes
-        let deleteId = buttonId.data('id');
-        // console.log(deleteId); // getting the correct ID
-        deleteTask(deleteId);
-      });
+    $('body').on('click', '.form-check-input', checkboxClick);
+    $('#modalDeleteButton').on('click', deleteTask);
 };
 
 function submitButtonHandler() {
@@ -32,6 +26,19 @@ function submitButtonHandler() {
             // console.log(taskToSend);
             saveTask(taskToSend);
         };
+    });
+};
+
+function deleteModalButtonHandler() {
+    $('#delete-modal').on('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        let buttonId = $(event.relatedTarget);
+        // Extract info from data-* attributes
+        let deleteId = buttonId.data('id');
+        // console.log(deleteId); // getting the correct ID
+        // deleteTask(deleteId); // was used when setting up DELETE route
+        // sets the data-id for the delete button in the modal
+        $(this).find('.modal-delete-button').data('id', deleteId);
     });
 };
 
@@ -91,8 +98,10 @@ function checkboxClick() {
     };
 };
 
-function deleteTask(idNumber) {
+function deleteTask() {
     // console.log('In deleteTask');
+    // console.log($(this).data('id'));
+    let idNumber = $(this).data('id');
     $.ajax({
         type: 'DELETE',
         url: `/tasks/${idNumber}`

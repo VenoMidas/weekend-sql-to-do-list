@@ -7,6 +7,15 @@ function readyNow() {
     getTasks()
     submitButtonHandler();
     $('body').on('click', '.form-check-input', checkboxClick);
+
+    $('#delete-modal').on('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        let buttonId = $(event.relatedTarget);
+        // Extract info from data-* attributes
+        let deleteId = buttonId.data('id');
+        // console.log(deleteId); // getting the correct ID
+        deleteTask(deleteId);
+      });
 };
 
 function submitButtonHandler() {
@@ -59,7 +68,7 @@ function getTasks() {
                     <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit" data-bs-toggle="modal" data-bs-target="#update-modal"><i class="bi bi-pencil-square"></i>
                 </li>
                 <li class="list-inline-item">
-                    <button class="btn btn-danger btn-sm rounded-0" type="button" title="delete" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="bi bi-trash3"></i>
+                    <button data-id="${task.id}" class="btn btn-danger btn-sm rounded-0" type="button" title="delete" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="bi bi-trash3"></i>
                 </li>
             </ul>
         </div>
@@ -80,4 +89,8 @@ function checkboxClick() {
     } else {
         $(this).parent().parent().removeClass('complete-task');
     };
+};
+
+function deleteTask(idNumber) {
+    console.log('In deleteTask');
 };

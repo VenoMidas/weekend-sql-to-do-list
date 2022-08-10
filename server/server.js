@@ -12,18 +12,3 @@ app.use('/tasks', tasksRouter);
 app.listen(port, () => {
     console.log('Listening on port:', port);
 });
-
-
-// function deleteArtist() {
-//     // console.log('In deleteArtist');
-//     const artistId = $(this).data('id');
-//     $.ajax({
-//         type: 'DELETE',
-//         url: `/artist/${artistId}`
-//     }).then(function (response) {
-//         getArtists();
-//     }).catch(function (error) {
-//         console.log(error);
-//         alert('Something went wrong!');
-//     });
-// };

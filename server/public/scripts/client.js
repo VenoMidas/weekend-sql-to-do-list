@@ -92,5 +92,14 @@ function checkboxClick() {
 };
 
 function deleteTask(idNumber) {
-    console.log('In deleteTask');
+    // console.log('In deleteTask');
+    $.ajax({
+        type: 'DELETE',
+        url: `/tasks/${idNumber}`
+    }).then(function (response) {
+        getTasks();
+    }).catch(function (error) {
+        console.log(error);
+        alert('Something went wrong!');
+    });
 };

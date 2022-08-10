@@ -12,9 +12,15 @@ Need to keep track of your to-dos? Utilize this simple to-do app!
 
 - [Node.js](https://nodejs.org/en/)
 
+#### Optional
+- [nodemon](https://www.npmjs.com/package/nodemon)
+- If you don't have nodemon installed you can change the start script in the `package.json` to `"node server/server.js"`
+
 ## Installation
 
-1. run `npm install` in your terminal - this will install express and bootstrap.
+1. Create a database named `weekend_to_do_app`,
+2. The queries in the `weekend_to_do_app.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
+3. Open your editor and run `npm install` in your terminal - this will install express, pg, and bootstrap.
 2. run `npm start` in your terminal. (Default port is 5000, if port is in use modify `server.js` port variable.)
 3. Navigate to `localhost:5000` in browser (if port was modified, use redifined port number)
 
@@ -29,7 +35,8 @@ Need to keep track of your to-dos? Utilize this simple to-do app!
 5. ![image](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 6. ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 7. ![image](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-8. ![image](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+8. [node-postgress](https://www.npmjs.com/package/pg)
+9. ![image](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ## License
 
@@ -48,12 +55,12 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 ### Required Features
 
 - [X] Create a front end experience that allows a user to create a Task.
-- [ ] When the Task is created, it should be stored inside of a database (SQL)
+- [X] When the Task is created, it should be stored inside of a database (SQL)
 - [X] Whenever a Task is created the front end should refresh to show all tasks that need to be completed.
 - [X] Each Task should have an option to 'Complete' or 'Delete'.
 - [X] When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be  'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.
 - [ ] Whether or not a Task is complete should also be stored in the database.
-- [ ] Deleting a Task should remove it both from the front end as well as the Database.
+- [X] Deleting a Task should remove it both from the front end as well as the Database.
 
 ### Styling
 - [X] Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
@@ -63,9 +70,9 @@ If you have suggestions or issues, please email me at [schuma1022@gmail.com](mai
 
 ### Database
 
-- [ ] Be sure to create a new database through Postico. Use the name `weekend-to-do-app`. You will need to use this name in your database connection configuration on your server.
+- [X] Be sure to create a new database through Postico. Use the name `weekend-to-do-app`. You will need to use this name in your database connection configuration on your server.
 
-- [ ] Please include a `database.sql` text file in your repo that includes all of your `CREATE TABLE` queries. This is so we can re-create your database while testing your app.
+- [X] Please include a `database.sql` text file in your repo that includes all of your `CREATE TABLE` queries. This is so we can re-create your database while testing your app.
 
 ## Stretch Goals
 

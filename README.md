@@ -35,7 +35,7 @@ Need to keep track of your to-dos? Utilize this simple to-do app!
 5. ![image](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 6. ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 7. ![image](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-8. [node-postgress](https://www.npmjs.com/package/pg)
+8. [node-pg](https://www.npmjs.com/package/pg)
 9. ![image](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ## License

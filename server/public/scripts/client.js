@@ -188,3 +188,17 @@ function updateTask() {
         alert('Something went wrong!')
     });
 };
+
+function timeTest() {
+    let currentdate = new Date(); 
+    let dateTime = "Created at: " + (currentdate.getMonth()+1) + "/"
+                                  + currentdate.getDate()  + "/" 
+                                  + currentdate.getFullYear() + " @ "  
+                                  + currentdate.getHours() + ":"  
+                                  + currentdate.getMinutes();
+    console.log(dateTime);
+};
+
+
+
+timeTest();

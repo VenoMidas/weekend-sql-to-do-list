@@ -30,10 +30,26 @@ tasksRouter.get('/', (req, res) => {
 tasksRouter.delete('/:id', (req, res) => {
     const queryText = 'DELETE FROM "tasks" WHERE "id" = $1;';
     pool.query(queryText, [req.params.id])
-    .then((results) => {
+        .then((results) => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('Error in tasks DELETE', error);
+            res.sendStatus(500);
+        });
+});
+
+tasksRouter.put('/:id', (req, res) => {
+    const taskId = req.params.id;
+    const task = req.body;
+    const queryText = `UPDATE "tasks" 
+                       SET "task" = $1, 
+                           "details" = $2, 
+                           "priority" = $3 
+                       WHERE "id" = $4;`;
+    pool.query(queryText, [task.task, task.details, task.priority, taskId]).then((results) => {
         res.sendStatus(200);
     }).catch((error) => {
-        console.log('Error in tasks DELETE', error);
+        console.log('Error in PUT task', error);
         res.sendStatus(500);
     });
 });

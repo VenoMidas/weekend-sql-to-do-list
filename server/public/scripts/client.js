@@ -53,7 +53,7 @@ function updateModalButtonHandler() {
         // modal.find('.update-input-task').val();
         // modal.find('.update-input-details').val();
         // modal.find('.update-input-priority');
-      });
+    });
 };
 
 function saveTask(newTask) {
@@ -130,4 +130,19 @@ function deleteTask() {
 function updateTask() {
     // console.log('In updateTask');
     // console.log($(this).data('id'));
+    const taskId = $(this).data('id');
+    $.ajax({
+        type: 'PUT',
+        url: `/tasks/${taskId}`,
+        data: {
+            task: $('#update-task').val(),
+            details: $('#update-details').val(),
+            priority: $('#update-priority').val(),
+        }
+    }).then(function (response) {
+        getTasks();
+    }).catch(function (error) {
+        console.log(error);
+        alert('Something went wrong!')
+    });
 };

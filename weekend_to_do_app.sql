@@ -4,7 +4,7 @@ CREATE TABLE "tasks" (
     "task" varchar(56) NOT NULL,
     "details" varchar(215),
     "priority" varchar(6), -- dropdown list low/medium/high values
-    "completed" varchar(5) -- true/false
+    "completed" varchar(5) DEFAULT 'false' -- true/false
 );
 
 -- some lorem ipsum tasks to insert to get started

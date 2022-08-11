@@ -18,7 +18,7 @@ tasksRouter.post('/', (req, res) => {
 });
 
 tasksRouter.get('/', (req, res) => {
-    const queryText = 'SELECT * FROM "tasks";';
+    const queryText = 'SELECT * FROM "tasks" ORDER BY "id";';
     pool.query(queryText).then((result) => {
         res.send(result.rows);
     }).catch((error) => {
@@ -57,6 +57,22 @@ tasksRouter.put('/:id', (req, res) => {
                            "priority" = $3 
                        WHERE "id" = $4;`;
     pool.query(queryText, [task.task, task.details, task.priority, taskId]).then((results) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error in PUT task', error);
+        res.sendStatus(500);
+    });
+});
+
+tasksRouter.put('/checked/:id', (req, res) => {
+    const taskId = req.params.id;
+    // console.log('Task ID', taskId);
+    const task = req.body;
+    // console.log('task completed', task.completed);
+    const queryText = `UPDATE "tasks"
+                       SET "completed" = $1
+                       WHERE "id" = $2;`;
+    pool.query(queryText, [task.completed, taskId]).then((results) => {
         res.sendStatus(200);
     }).catch((error) => {
         console.log('Error in PUT task', error);

@@ -179,7 +179,7 @@
                         <span class="input-group-text">
                             <i class="bi bi-list-task"></i>
                         </span>
-                        <input type="text" class="form-control" id="update-task" placeholder="e.g. mow the lawn"
+                        <input type="text" class="form-control update-input-task" id="update-task" placeholder="e.g. mow the lawn"
                             required>
                     </div>
                     <div class="input-group mt-3">
@@ -191,9 +191,20 @@
                             <label for="update-details">Additional Details (optional):</label>
                         </div>
                     </div>
+                    <label for="priority" class="form-label mt-2">Priority Level:</label>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-exclamation-triangle"></i>
+                        </span>
+                        <select id="update-priority" class="form-select">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-warning">Update</button>
+                    <button id="modalUpdateButton" class="btn btn-warning modal-update-button" data-id="">Update</button>
                 </div>
             </div>
         </div>

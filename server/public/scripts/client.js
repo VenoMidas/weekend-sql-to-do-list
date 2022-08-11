@@ -7,9 +7,11 @@ function readyNow() {
     getTasks()
     submitButtonHandler();
     deleteModalButtonHandler();
+    updateModalButtonHandler();
 
     $('body').on('click', '.form-check-input', checkboxClick);
     $('#modalDeleteButton').on('click', deleteTask);
+    $('#modalUpdateButton').on('click', updateTask);
 };
 
 function submitButtonHandler() {
@@ -42,6 +44,18 @@ function deleteModalButtonHandler() {
     });
 };
 
+function updateModalButtonHandler() {
+    $('#update-modal').on('show.bs.modal', function (event) {
+        let buttonId = $(event.relatedTarget);
+        let updateId = buttonId.data('id');
+        let modal = $(this)
+        modal.find('.modal-update-button').data('id', updateId);
+        // modal.find('.update-input-task').val();
+        // modal.find('.update-input-details').val();
+        // modal.find('.update-input-priority');
+      });
+};
+
 function saveTask(newTask) {
     // console.log(newTask);
     $.ajax({
@@ -72,7 +86,7 @@ function getTasks() {
             <p class="my-2 ps-5">${task.details}</p>
             <ul class="list-inline m-0 text-end">
                 <li class="list-inline-item">
-                    <button class="btn btn-warning btn-sm rounded-0" type="button" title="edit" data-bs-toggle="modal" data-bs-target="#update-modal"><i class="bi bi-pencil-square"></i>
+                    <button data-id="${task.id}" class="btn btn-warning btn-sm rounded-0" type="button" title="edit" data-bs-toggle="modal" data-bs-target="#update-modal"><i class="bi bi-pencil-square"></i>
                 </li>
                 <li class="list-inline-item">
                     <button data-id="${task.id}" class="btn btn-danger btn-sm rounded-0" type="button" title="delete" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="bi bi-trash3"></i>
@@ -111,4 +125,9 @@ function deleteTask() {
         console.log(error);
         alert('Something went wrong!');
     });
+};
+
+function updateTask() {
+    // console.log('In updateTask');
+    // console.log($(this).data('id'));
 };

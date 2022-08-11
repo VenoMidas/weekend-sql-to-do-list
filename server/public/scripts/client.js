@@ -46,13 +46,22 @@ function deleteModalButtonHandler() {
 
 function updateModalButtonHandler() {
     $('#update-modal').on('show.bs.modal', function (event) {
-        let buttonId = $(event.relatedTarget);
-        let updateId = buttonId.data('id');
-        let modal = $(this)
+        const buttonId = $(event.relatedTarget);
+        const updateId = buttonId.data('id');
+        const modal = $(this)
         modal.find('.modal-update-button').data('id', updateId);
-        // modal.find('.update-input-task').val();
-        // modal.find('.update-input-details').val();
-        // modal.find('.update-input-priority');
+        $.ajax({
+            type: 'GET',
+            url: `/tasks/${updateId}`
+        }).then(function (response) {
+            // console.log(response);
+            modal.find('#update-task').val(response[0].task);
+            modal.find('#update-details').val(response[0].details);
+            modal.find('#update-priority').val(response[0].priority);
+        }).catch(function (error) {
+            console.log(error);
+            alert('Something went wrong!');
+        });
     });
 };
 

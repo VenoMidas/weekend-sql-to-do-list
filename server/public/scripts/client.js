@@ -84,12 +84,21 @@ function getTasks() {
         url: '/tasks'
     }).then(function (response) {
         // console.log(response);
+        let checkboxClass;
+        let checked;
         $('#to-do-list').empty();
         for (let task of response) {
+            if (task.completed === 'true') {
+                checkboxClass = 'complete-task';
+                checked = 'checked';
+            } else {
+                checkboxClass = '';
+                checked = '';
+            };
             $('#to-do-list').append(`
-            <div class="list-group-item py-3 ${task.priority}">
+            <div class="${checkboxClass} list-group-item py-3 ${task.priority}">
             <span class="h5">
-                <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" data-id="${task.id}" ${checked}>
                 ${task.task}
             </span>
             <p class="my-2 ps-5">${task.details}</p>
@@ -114,10 +123,34 @@ function checkboxClick() {
     // console.log('In checkboxClick');
     // console.log($(this));
     // console.log($(this).prop("checked"));
+    const taskId = $(this).data('id');
+    // console.log(taskId);
     if ($(this).prop("checked") === true) {
-        $(this).parent().parent().addClass('complete-task');
+        $.ajax({
+            type: 'PUT',
+            url: `/tasks/checked/${taskId}`,
+            data: {
+                completed: 'true',
+            }
+        }).then(function (response) {
+            getTasks();
+        }).catch(function (error) {
+            console.log(error);
+            alert('Something went wrong!')
+        });
     } else {
-        $(this).parent().parent().removeClass('complete-task');
+        $.ajax({
+            type: 'PUT',
+            url: `/tasks/checked/${taskId}`,
+            data: {
+                completed: 'false',
+            }
+        }).then(function (response) {
+            getTasks();
+        }).catch(function (error) {
+            console.log(error);
+            alert('Something went wrong!')
+        });
     };
 };
 

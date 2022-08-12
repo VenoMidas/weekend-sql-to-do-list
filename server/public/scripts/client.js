@@ -127,36 +127,23 @@ function checkboxClick() {
     // console.log($(this));
     // console.log($(this).prop("checked"));
     const taskId = $(this).data('id');
+    let checkedThis = $(this).prop("checked");
+    let checkboxClickedObject = createCheckboxClickedObject(checkedThis);
+    // console.log(checkboxClickedObject);
     // console.log(taskId);
-    if ($(this).prop("checked") === true) {
-        $.ajax({
-            type: 'PUT',
-            url: `/tasks/checked/${taskId}`,
-            data: {
-                completed: 'true',
-                finished: setDateTime()
-            }
-        }).then(function (response) {
-            getTasks();
-        }).catch(function (error) {
-            console.log(error);
-            alert('Something went wrong!')
-        });
-    } else {
-        $.ajax({
-            type: 'PUT',
-            url: `/tasks/checked/${taskId}`,
-            data: {
-                completed: 'false',
-                finished: '',
-            }
-        }).then(function (response) {
-            getTasks();
-        }).catch(function (error) {
-            console.log(error);
-            alert('Something went wrong!')
-        });
-    };
+    $.ajax({
+        type: 'PUT',
+        url: `/tasks/checked/${taskId}`,
+        data: {
+            completed: checkboxClickedObject.completed,
+            finished: checkboxClickedObject.finished,
+        }
+    }).then(function (response) {
+        getTasks();
+    }).catch(function (error) {
+        console.log(error);
+        alert('Something went wrong!')
+    });
 };
 
 function deleteTask() {
@@ -196,12 +183,12 @@ function updateTask() {
 };
 
 function setDateTime() {
-    let currentdate = new Date(); 
-    let dateTime = (currentdate.getMonth()+1) + "/"
-                   + currentdate.getDate()  + "/" 
-                   + currentdate.getFullYear() + " @ "  
-                   + currentdate.getHours() + ":"  
-                   + currentdate.getMinutes();
+    let currentdate = new Date();
+    let dateTime = (currentdate.getMonth() + 1) + "/"
+        + currentdate.getDate() + "/"
+        + currentdate.getFullYear() + " @ "
+        + currentdate.getHours() + ":"
+        + currentdate.getMinutes();
     // console.log(dateTime);
     return dateTime;
 };
@@ -213,5 +200,19 @@ function checkTimeStatus(object) {
         return ' - updated on : ' + object.updated;
     } else {
         return ' - finished on : ' + object.finished;
+    };
+};
+
+function createCheckboxClickedObject(checkedThis) {
+    if (checkedThis === true) {
+        return {
+            completed: "true",
+            finished: setDateTime()
+        };
+    } else {
+        return {
+            completed: "false",
+            finished: ""
+        };
     };
 };

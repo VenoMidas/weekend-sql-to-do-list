@@ -205,5 +205,11 @@ function setDateTime() {
 };
 
 function checkTimeStatus(object) {
-    return ' - created on : ' + object.created;
+    if (object.finished === '' && object.updated === '') {
+        return ' - created on : ' + object.created;
+    } else if (object.finished === '') {
+        return ' - updated on : ' + object.updated;
+    } else {
+        return ' - finished on : ' + object.finished;
+    };
 };

@@ -23,7 +23,8 @@ function submitButtonHandler() {
             let taskToSend = {
                 task: $('#task').val(),
                 details: $('#details').val(),
-                priority: $('#priority').val()
+                priority: $('#priority').val(),
+                created: setDateTime()
             };
             // console.log(taskToSend);
             saveTask(taskToSend);
@@ -86,6 +87,7 @@ function getTasks() {
         // console.log(response);
         let checkboxClass;
         let checked;
+        let displayTime;
         $('#to-do-list').empty();
         for (let task of response) {
             if (task.completed === 'true') {
@@ -95,11 +97,12 @@ function getTasks() {
                 checkboxClass = '';
                 checked = '';
             };
+            displayTime = checkTimeStatus(task);
             $('#to-do-list').append(`
             <div class="${checkboxClass} list-group-item py-3 ${task.priority}">
             <span class="h5">
                 <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" data-id="${task.id}" ${checked}>
-                ${task.task}
+                ${task.task}${displayTime}
             </span>
             <p class="my-2 ps-5">${task.details}</p>
             <ul class="list-inline m-0 text-end">
@@ -131,6 +134,7 @@ function checkboxClick() {
             url: `/tasks/checked/${taskId}`,
             data: {
                 completed: 'true',
+                finished: setDateTime()
             }
         }).then(function (response) {
             getTasks();
@@ -144,6 +148,7 @@ function checkboxClick() {
             url: `/tasks/checked/${taskId}`,
             data: {
                 completed: 'false',
+                finished: '',
             }
         }).then(function (response) {
             getTasks();
@@ -180,6 +185,7 @@ function updateTask() {
             task: $('#update-task').val(),
             details: $('#update-details').val(),
             priority: $('#update-priority').val(),
+            updated: setDateTime()
         }
     }).then(function (response) {
         getTasks();
@@ -187,4 +193,25 @@ function updateTask() {
         console.log(error);
         alert('Something went wrong!')
     });
+};
+
+function setDateTime() {
+    let currentdate = new Date(); 
+    let dateTime = (currentdate.getMonth()+1) + "/"
+                   + currentdate.getDate()  + "/" 
+                   + currentdate.getFullYear() + " @ "  
+                   + currentdate.getHours() + ":"  
+                   + currentdate.getMinutes();
+    // console.log(dateTime);
+    return dateTime;
+};
+
+function checkTimeStatus(object) {
+    if (object.finished === '' && object.updated === '') {
+        return ' - created on : ' + object.created;
+    } else if (object.finished === '') {
+        return ' - updated on : ' + object.updated;
+    } else {
+        return ' - finished on : ' + object.finished;
+    };
 };

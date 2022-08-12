@@ -5,9 +5,9 @@ const pool = require('../modules/pool.js');
 
 tasksRouter.post('/', (req, res) => {
     const task = req.body;
-    const queryText = `INSERT INTO "tasks" ("task", "details", "priority")
-                       VALUES ($1, $2, $3);`
-    pool.query(queryText, [task.task, task.details, task.priority])
+    const queryText = `INSERT INTO "tasks" ("task", "details", "priority", "created")
+                       VALUES ($1, $2, $3, $4);`
+    pool.query(queryText, [task.task, task.details, task.priority, task.created])
         .then((results) => {
             // console.log(results);
             res.send(results)
@@ -54,9 +54,10 @@ tasksRouter.put('/:id', (req, res) => {
     const queryText = `UPDATE "tasks" 
                        SET "task" = $1, 
                            "details" = $2, 
-                           "priority" = $3 
+                           "priority" = $3, 
+                           "updated" = $5
                        WHERE "id" = $4;`;
-    pool.query(queryText, [task.task, task.details, task.priority, taskId]).then((results) => {
+    pool.query(queryText, [task.task, task.details, task.priority, taskId, task.updated]).then((results) => {
         res.sendStatus(200);
     }).catch((error) => {
         console.log('Error in PUT task', error);
@@ -70,9 +71,10 @@ tasksRouter.put('/checked/:id', (req, res) => {
     const task = req.body;
     // console.log('task completed', task.completed);
     const queryText = `UPDATE "tasks"
-                       SET "completed" = $1
+                       SET "completed" = $1,
+                           "finished" = $3
                        WHERE "id" = $2;`;
-    pool.query(queryText, [task.completed, taskId]).then((results) => {
+    pool.query(queryText, [task.completed, taskId, task.finished]).then((results) => {
         res.sendStatus(200);
     }).catch((error) => {
         console.log('Error in PUT task', error);

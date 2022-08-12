@@ -71,9 +71,10 @@ tasksRouter.put('/checked/:id', (req, res) => {
     const task = req.body;
     // console.log('task completed', task.completed);
     const queryText = `UPDATE "tasks"
-                       SET "completed" = $1
+                       SET "completed" = $1,
+                           "finished" = $3
                        WHERE "id" = $2;`;
-    pool.query(queryText, [task.completed, taskId]).then((results) => {
+    pool.query(queryText, [task.completed, taskId, task.finished]).then((results) => {
         res.sendStatus(200);
     }).catch((error) => {
         console.log('Error in PUT task', error);

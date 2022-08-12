@@ -134,6 +134,7 @@ function checkboxClick() {
             url: `/tasks/checked/${taskId}`,
             data: {
                 completed: 'true',
+                finished: setDateTime()
             }
         }).then(function (response) {
             getTasks();
@@ -147,6 +148,7 @@ function checkboxClick() {
             url: `/tasks/checked/${taskId}`,
             data: {
                 completed: 'false',
+                finished: '',
             }
         }).then(function (response) {
             getTasks();

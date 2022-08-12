@@ -183,6 +183,7 @@ function updateTask() {
             task: $('#update-task').val(),
             details: $('#update-details').val(),
             priority: $('#update-priority').val(),
+            updated: setDateTime()
         }
     }).then(function (response) {
         getTasks();

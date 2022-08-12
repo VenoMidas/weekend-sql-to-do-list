@@ -54,9 +54,10 @@ tasksRouter.put('/:id', (req, res) => {
     const queryText = `UPDATE "tasks" 
                        SET "task" = $1, 
                            "details" = $2, 
-                           "priority" = $3 
+                           "priority" = $3, 
+                           "updated" = $5
                        WHERE "id" = $4;`;
-    pool.query(queryText, [task.task, task.details, task.priority, taskId]).then((results) => {
+    pool.query(queryText, [task.task, task.details, task.priority, taskId, task.updated]).then((results) => {
         res.sendStatus(200);
     }).catch((error) => {
         console.log('Error in PUT task', error);

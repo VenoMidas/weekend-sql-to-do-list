@@ -87,6 +87,7 @@ function getTasks() {
         // console.log(response);
         let checkboxClass;
         let checked;
+        let displayTime;
         $('#to-do-list').empty();
         for (let task of response) {
             if (task.completed === 'true') {
@@ -96,11 +97,12 @@ function getTasks() {
                 checkboxClass = '';
                 checked = '';
             };
+            displayTime = checkTimeStatus(task);
             $('#to-do-list').append(`
             <div class="${checkboxClass} list-group-item py-3 ${task.priority}">
             <span class="h5">
                 <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" data-id="${task.id}" ${checked}>
-                ${task.task}
+                ${task.task}${displayTime}
             </span>
             <p class="my-2 ps-5">${task.details}</p>
             <ul class="list-inline m-0 text-end">
@@ -199,4 +201,8 @@ function setDateTime() {
                    + currentdate.getMinutes();
     // console.log(dateTime);
     return dateTime;
+};
+
+function checkTimeStatus(object) {
+    return ' - created on : ' + object.created;
 };

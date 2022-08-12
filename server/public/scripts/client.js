@@ -23,7 +23,8 @@ function submitButtonHandler() {
             let taskToSend = {
                 task: $('#task').val(),
                 details: $('#details').val(),
-                priority: $('#priority').val()
+                priority: $('#priority').val(),
+                created: setDateTime()
             };
             // console.log(taskToSend);
             saveTask(taskToSend);
@@ -189,16 +190,13 @@ function updateTask() {
     });
 };
 
-function timeTest() {
+function setDateTime() {
     let currentdate = new Date(); 
-    let dateTime = "Created at: " + (currentdate.getMonth()+1) + "/"
-                                  + currentdate.getDate()  + "/" 
-                                  + currentdate.getFullYear() + " @ "  
-                                  + currentdate.getHours() + ":"  
-                                  + currentdate.getMinutes();
-    console.log(dateTime);
+    let dateTime = (currentdate.getMonth()+1) + "/"
+                   + currentdate.getDate()  + "/" 
+                   + currentdate.getFullYear() + " @ "  
+                   + currentdate.getHours() + ":"  
+                   + currentdate.getMinutes();
+    // console.log(dateTime);
+    return dateTime;
 };
-
-
-
-timeTest();

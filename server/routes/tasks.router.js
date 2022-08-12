@@ -5,9 +5,9 @@ const pool = require('../modules/pool.js');
 
 tasksRouter.post('/', (req, res) => {
     const task = req.body;
-    const queryText = `INSERT INTO "tasks" ("task", "details", "priority")
-                       VALUES ($1, $2, $3);`
-    pool.query(queryText, [task.task, task.details, task.priority])
+    const queryText = `INSERT INTO "tasks" ("task", "details", "priority", "created")
+                       VALUES ($1, $2, $3, $4);`
+    pool.query(queryText, [task.task, task.details, task.priority, task.created])
         .then((results) => {
             // console.log(results);
             res.send(results)

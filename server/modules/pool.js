@@ -1,4 +1,5 @@
 const pg = require('pg');
+const url = require('url');
 
 let config = {};
 
@@ -19,7 +20,7 @@ if (process.env.DATABASE_URL) {
     config = {
         host: 'localhost', // 127.0.0.1
         port: 5432,
-        database: 'weekend_to_do_app', // CHANGE THIS LINE to match your local database name!
+        database: process.env.DATABASE_NAME || 'weekend_to_do_app', // CHANGE THIS LINE to match your local database name!
     };
 }
 

@@ -46,6 +46,8 @@ Need to keep track of your to-dos? Utilize this simple to-do app!
 
 Thanks to [Prime Digital Academy](https://www.primeacademy.io/) and members of the Phrygian cohort who equipped and helped me to make this application a reality.
 
+Also thanks to the Net Ninja you tube channel for offering tutorials on bootstrap. [NetNinja](https://www.youtube.com/c/TheNetNinja/featured)
+
 ## Support
 
 If you have suggestions or issues, please email me at [schuma1022@gmail.com](mailto:schuma1022@gmail.com)
@@ -93,3 +95,9 @@ For each of your strech goals, you will be practicing git branching. Please refe
     
 - [X] `feature-time-completed` 
     - [X] Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format.
+
+## Future to-do's
+
+- [ ] Issue with iOS devices, believe it is related to the date/time format, need to fix
+- [ ] Want to add sorting
+- [ ] Want to add filtering

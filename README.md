@@ -1,3 +1,6 @@
+<!-- Badges -->
+![image](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+
 # SQL To-Do List
 
 ## Description
@@ -6,7 +9,11 @@ _Duration: 2 Weeks_
 
 Need to keep track of your to-dos? Utilize this simple to-do app!
 
+[Deployed version of app](https://sleepy-dawn-31095.herokuapp.com/)
+
 ## Screenshot
+
+![Screenshot](images/screenShot.png)
 
 ### Prerequisites
 
@@ -35,7 +42,7 @@ Need to keep track of your to-dos? Utilize this simple to-do app!
 5. ![image](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 6. ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 7. ![image](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-8. [node-pg](https://www.npmjs.com/package/pg)
+8. [node-pg](https://img.shields.io/badge/Node.pg-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 9. ![image](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ## License
@@ -52,52 +59,10 @@ Also thanks to the Net Ninja you tube channel for offering tutorials on bootstra
 
 If you have suggestions or issues, please email me at [schuma1022@gmail.com](mailto:schuma1022@gmail.com)
 
-## Project Checklist
-
-### Required Features
-
-- [X] Create a front end experience that allows a user to create a Task.
-- [X] When the Task is created, it should be stored inside of a database (SQL)
-- [X] Whenever a Task is created the front end should refresh to show all tasks that need to be completed.
-- [X] Each Task should have an option to 'Complete' or 'Delete'.
-- [X] When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be  'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.
-- [X] Whether or not a Task is complete should also be stored in the database.
-- [X] Deleting a Task should remove it both from the front end as well as the Database.
-
-### Styling
-- [X] Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
-  - [X] background color of the page
-  - [X] font family and size
-  - [X] text color & or background color of tasks *to show whether or not they have been completed*
-
-### Database
-
-- [X] Be sure to create a new database through Postico. Use the name `weekend-to-do-app`. You will need to use this name in your database connection configuration on your server.
-
-- [X] Please include a `database.sql` text file in your repo that includes all of your `CREATE TABLE` queries. This is so we can re-create your database while testing your app.
-
-## Stretch Goals
-
-For each of your strech goals, you will be practicing git branching. Please refer to the branching notes for a reminder on commands. Each branch will be merged into main using `--no-ff`. This will allow us to see that you branched your feature when you turn in your code.
-
-- [X] `feature-styling-bootstrap` 
-    - [X] Add Bootstrap to the front end and style it up!
-    - [X] Buttons -- make the creation buttons and completion buttons green and the delete red.
-    - [X] Inputs -- make your text inputs styled in the bootstrap way
-    - [X] Responsive -- make your app responsive to different screen sizes -- check out the [Layout](https://getbootstrap.com/docs/4.1/layout/overview/) section
-
-- [X] `feature-confirm-delete`
-    - [X] In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task.
-    - [X] Some styled options are [Bootstrap Modal](https://getbootstrap.com/docs/4.0/components/modal/) or [Sweet Alerts](https://sweetalert.js.org/guides/): Use the CDN option.
-
-- [ ] `feature-ordering-task-query` 
-    - [ ] Research [Query Params](https://expressjs.com/en/api.html#req.query) to have the request reverse the order of the returned todos. 
-    
-- [X] `feature-time-completed` 
-    - [X] Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format.
-
 ## Future to-do's
 
-- [ ] Issue with iOS devices, believe it is related to the date/time format, need to fix
-- [ ] Want to add sorting
-- [ ] Want to add filtering
+- [ ] Correct form-submit function - currently causes issues on iOS devices
+- [ ] Change database fields to use proper types like timestamp and boolean
+- [ ] Create custom bootstrap color theme
+- [ ] Add Sorting capabilities
+- [ ] Add Filtering capabilities

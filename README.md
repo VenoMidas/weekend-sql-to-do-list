@@ -26,7 +26,7 @@ Need to keep track of your to-dos? Utilize this simple to-do app!
 ## Installation
 
 1. Create a database named `weekend_to_do_app`,
-2. The queries in the `weekend_to_do_app.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
+2. The queries in the `weekend_to_do_app.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. I recommend using Postico to run those queries as that was used to create the queries,
 3. Open your editor and run `npm install` in your terminal - this will install express, pg, and bootstrap.
 2. run `npm start` in your terminal. (Default port is 5000, if port is in use modify `server.js` port variable.)
 3. Navigate to `localhost:5000` in browser (if port was modified, use redifined port number)

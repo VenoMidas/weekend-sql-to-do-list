@@ -60,7 +60,7 @@ Need to keep track of your to-dos? Utilize this simple to-do app!
 
 Thanks to [Prime Digital Academy](https://www.primeacademy.io/) and members of the Phrygian cohort who equipped and helped me to make this application a reality.
 
-Also thanks to the Net Ninja you tube channel for offering tutorials on bootstrap. [NetNinja](https://www.youtube.com/c/TheNetNinja/featured)
+Also thanks to the Net Ninja you tube channel for offering tutorials on bootstrap. [NetNinja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9joIM91nLzd_qaH_AimmdAR)
 
 ## Support
 

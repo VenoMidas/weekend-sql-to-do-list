@@ -33,6 +33,13 @@ Need to keep track of your to-dos? Utilize this simple to-do app!
 
 ## Usage
 
+1. As a user, I want to be able to add a task to my to-do list
+2. As a user, I want to be able to add details to my tasks
+3. As a user, I want to be able to add a priority level to my tasks.
+4. As a user, I want to be able to edit my tasks
+5. As a user, I want to be able to delete my tasks
+6. As a user, I want to be able to mark tasks complete
+
 ## Built With
 
 1. ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -59,7 +66,7 @@ Also thanks to the Net Ninja you tube channel for offering tutorials on bootstra
 
 If you have suggestions or issues, please email me at [schuma1022@gmail.com](mailto:schuma1022@gmail.com)
 
-## Future to-do's
+## Future updates
 
 - [ ] Correct form-submit function - currently causes issues on iOS devices
 - [ ] Change database fields to use proper types like timestamp and boolean
